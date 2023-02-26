@@ -3,11 +3,11 @@ package ast;
 public enum OpUn {
     MINUS {
         public String toString() {
-            return "-";
+            return "--";
         }
     },
     PLUS {
-        public String toString() { return "+";}
+        public String toString() { return "++";}
     },
     NOT {
         public String toString() {

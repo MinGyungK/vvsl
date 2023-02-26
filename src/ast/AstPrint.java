@@ -3,41 +3,46 @@ package ast;
 public class AstPrint implements Visitor<String> {
     @Override
     public String visit(VvslPgrm p) {
-        return null;
+        return p.getExpressions().accept(this);
     }
 
     @Override
     public String visit(Bool exp) {
-        return null;
+        return exp.getValue()? "true":"false";
     }
 
     @Override
-    public String visit(Int exp) {
-        return null;
+    public String visit(Int anInt) {
+        return anInt.getValue()+"";
     }
 
     @Override
     public String visit(Id id) {
-        return null;
+        return id.getValue();
     }
 
     @Override
     public String visit(BinOp binOp) {
-        return null;
+        String left = binOp.getLeftexp().accept(this);
+        String right = binOp.getRightexp().accept(this);
+        String op = binOp.getOperator().toString();
+        return left + op + right;
+
     }
 
     @Override
     public String visit(UnOpNot unOp) {
-        return null;
+        String exp = unOp.getExpression().accept(this);
+        String op = unOp.getOperation().toString();
+        return exp + op;
     }
 
     @Override
     public String visit(UnOpMinPlus unOpMinPlus) {
-        return null;
+        String exp = unOpMinPlus.getExpression().accept(this);
+        String op = unOpMinPlus.getOperation().toString();
+        return exp + op;
     }
 
-    @Override
-    public String visit(Tab tab) {
-        return null;
-    }
+
 }

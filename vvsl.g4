@@ -13,7 +13,6 @@ exp : INT #exp_int
     | exp op = (LT|GT|LE|GE) exp #exp_comp
     | exp op = (AND|OR) exp  #exp_andor
     | LPAREN exp RPAREN #exp_paren
-    | ID LBRAKET exp* RBRAKET #exp_tab
     ;
 
 

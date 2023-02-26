@@ -62,11 +62,6 @@ public class AntlrToAst extends vvslBaseVisitor<Node> {
         return ctx.exp().accept(this);
     }
 
-    @Override
-    public Node visitExp_tab(vvslParser.Exp_tabContext ctx) {
-        List<Expression> expressions = ctx.exp().stream().map((e) -> (Expression) e.accept(this)).toList();
-        return new Tab((position(ctx)), expressions);
-    }
 
     @Override
     public Node visitExp_bin_bool(vvslParser.Exp_bin_boolContext ctx) {

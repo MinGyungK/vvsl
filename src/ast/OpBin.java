@@ -73,6 +73,6 @@ public enum OpBin {
         public String toString() {
             return "^";
         }
-    }
+    };
 
 }

@@ -8,6 +8,8 @@ public class Id extends Expression{
         this.position = position;
         this.value = value;
     }
+
+    public String getValue() { return value; }
     @Override
     public <T> T accept(Visitor<T> visitor) {
         return visitor.visit(this);
