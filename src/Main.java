@@ -23,7 +23,7 @@ public class Main {
         Node ast = tree.accept(new AntlrToAst());
 
 
-        LecteurGaucheDroite v = new LecteurGaucheDroite();
+        /*LecteurGaucheDroite v = new LecteurGaucheDroite();
         ast.accept(v);
         TreePrinter v_ = new TreePrinter();
         System.out.println(ast.accept(v_));
@@ -33,7 +33,7 @@ public class Main {
         //Modifier l’ast :
         RetourneEtMultiplie rem = new RetourneEtMultiplie();
         Node newAst = ast.accept(rem);
-        System.out.println(newAst.accept(v_));
+        System.out.println(newAst.accept(v_));*/
     }
 
 
